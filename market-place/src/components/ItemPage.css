@@ -1,0 +1,33 @@
+
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    font-size: 1vw;
+    text-align: center;
+}
+
+.item-page {
+    display: flex;
+    flex-direction: row;
+    margin: 1.5vw 15vw;
+    border: 2px solid rgb(218, 212, 212);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.item-page img {
+    object-fit: cover;
+    width: 25vw;
+    height: 30vw;
+}
+
+.item-page .more-info {
+    padding: 2vw;
+}
+
+.item-page h1 {
+    margin: 0 0 1vw 0;
+}

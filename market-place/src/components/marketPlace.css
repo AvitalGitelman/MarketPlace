@@ -2,8 +2,6 @@
     display: flex;
     margin: 1.5vw 15vw;
     flex-direction: column;
-    color: rgb(53, 53, 53);
-    font-family: Century Gothic;
 }
 
 h1 {
@@ -20,16 +18,17 @@ h1 {
     border: 2px solid rgb(218, 212, 212);
     border-radius: 20px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .item-info {
     display: flex;
     flex-direction: column;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin: auto 2vw;
 }
 
-.item-name span, .item-price span {
+.item-name span, .item-price span, .item-shop span {
     font-style: italic;
     font-weight: bold;
 }
