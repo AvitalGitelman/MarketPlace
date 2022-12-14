@@ -3,24 +3,27 @@ import './marketPlace.css';
 import React from 'react';
 
 
-import { shoppingList } from "../assests/shoppingList";
+import { Item } from './Item';
 
 import { useNavigate } from 'react-router-dom';
+import { ShoppingCartButton } from './ShoppingCartButton';
+import { getItems, useHttp } from '../providers/itemsProvider';
 
-export default function MarketPlace() {
+export default function MarketPlace({ onAdd }) {
     const navigate = useNavigate();
+    const {value: shoppingList, isLoading} = useHttp(getItems, true);
 
-    const onClickItem = (name) => navigate(`/item/${name}`);
+    const onClickItem = (id) => navigate(`/item/${id}`);
+    const onClickCart = () => navigate(`/cart`);
 
     return (
         <div className='market-place'>
             <h1>The Market Place</h1>
-            {shoppingList.map(({ name, price, picture }) => (<div className='shopping-list' key={name} onClick={() => onClickItem(name)}>
-                <div className='item-info'>
-                    <div className='item-name'><span>Name:</span> {name}</div>
-                    <div className='item-price'><span>Price:</span> {price}</div>
-                </div>
-                <img src={picture} alt={name} className='item-img' />
-            </div>))}
+            {isLoading ? <h2>loading items...</h2> : <div className='market-shopping-list'>
+                {shoppingList?.map((item) => <Item item={item} key={item._id} onClick={onClickItem} onAddItem={onAdd} />)}
+            </div>}
+            
+            <ShoppingCartButton onClick={onClickCart} />
         </div>)
 }
+

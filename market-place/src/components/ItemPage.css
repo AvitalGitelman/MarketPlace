@@ -17,7 +17,7 @@ a {
     overflow: hidden;
 }
 
-.item-page img {
+.item-page .item-page-img {
     object-fit: cover;
     width: 25vw;
 }

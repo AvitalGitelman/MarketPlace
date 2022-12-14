@@ -1,0 +1,20 @@
+.buy-cart-btn {
+    display: flex;
+    justify-content: center;
+    margin: 1vw 0;
+}
+
+.buy-cart-btn div {
+    font-size: 2vw;
+    font-weight: bold;
+    padding: 1vw;
+    border-radius: 2vw;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgb(55, 156, 214);
+}
+
+.buy-cart-btn div:hover {
+    background-color: rgb(35, 117, 165);
+}
